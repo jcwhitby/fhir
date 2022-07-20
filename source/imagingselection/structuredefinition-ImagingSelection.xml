@@ -406,6 +406,24 @@
       </mapping>
       <isSummary value="true"/>
     </element>
+    <element id="ImagingSelection.seriesNumber">
+      <path value="ImagingSelection.seriesNumber"/>
+      <short value="DICOM Series Number"/>
+      <definition value="The Series Number for the DICOM Series from which the images were selected."/>
+      <comment value="See [DICOM PS3.3 C.7.3](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.3.html)."/>
+      <requirements value="DICOM Series Number."/>
+      <alias value="SeriesNumber"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="unsignedInt"/>
+      </type>
+      <mapping>
+        <identity value="dicom"/>
+        <map value="Series Number (0020,0011)"/>
+      </mapping>
+      <isSummary value="true"/>
+    </element>
     <element id="ImagingSelection.frameOfReferenceUid">
       <path value="ImagingSelection.frameOfReferenceUid"/>
       <short value="The Frame of Reference UID for the selected images"/>
@@ -489,6 +507,25 @@
       <mapping>
         <identity value="dicom"/>
         <map value="SOP Instance UID (0008,0018)"/>
+      </mapping>
+    </element>
+    <element id="ImagingSelection.instance.number">
+      <path value="ImagingSelection.instance.number"/>
+      <short value="DICOM Instance Number"/>
+      <definition value="The Instance Number for the selected DICOM instance."/>
+      <comment value="See [DICOM PS3.3 C.7.6.1](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.html#sect_C.7.6.1).&#xA;
+      Note: A multiframe instance has a single instance number with each frame identified by a frame number."/>
+      <requirements value="DICOM Instance Number."/>
+      <alias value="InstanceNumber"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="unsignedInt"/>
+      </type>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="dicom"/>
+        <map value="Instance Number (0020,0011)"/>
       </mapping>
     </element>
     <element id="ImagingSelection.instance.sopClass">
