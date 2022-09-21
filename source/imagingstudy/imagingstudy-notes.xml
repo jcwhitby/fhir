@@ -219,7 +219,7 @@ or the introduction on the <a href="http://wiki.ihe.net/index.php/Invoke_Image_D
 <a name="additional-dicom-attributes"></a>
 <h4>Additional DICOM attributes</h4>
 <p>
-Some imaging uses may require information beyond what is present in an ImagingStudy resource. Many of the DICOM patient and study level attributes are found in the FHIR Patient, Procedure, or other resources which are referenced from an ImagingStudy instance. Other DICOM content may be transformed into other FHIR resources, such as DiagnosticReports or Observations, which are not directly referenced, but may be easily found.
+Some imaging uses may require information beyond what is present in an ImagingStudy resource. Many of the DICOM patient and study level attributes are found in the FHIR Patient, PlanDefinition, or other resources which are referenced from an ImagingStudy instance. Other DICOM content may be transformed into other FHIR resources, such as DiagnosticReports or Observations, which are not directly referenced, but may be easily found.
 </p><p>
 Although many ImagingStudy consumers are expected to need only the DICOM information contained in FHIR resources, some may need additional DICOM attributes. For these cases, which by their nature involve more imaging-aware consumers, the most flexible solution is to leverage the DICOM WADO-RS metadata-only endpoint to retrieve an XML or JSON representation of the DICOM study, series, instance, or frame information.
 </p><p>

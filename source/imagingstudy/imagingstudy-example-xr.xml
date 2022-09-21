@@ -63,7 +63,7 @@
 	<numberOfInstances value="2"/>
 	<procedure>
 		<reference>
-			<reference value="Procedure/example"/>
+			<reference value="PlanDefinition/example"/>
 		</reference>
 	</procedure>
 	<procedure>
