@@ -130,6 +130,30 @@
         <map value="StudyInstanceUID (0020,000D) | study ID (0020,0010)"/>
       </mapping>
     </element>
+    <element id="ImagingStudy.partOf">
+      <path value="ImagingStudy.partOf"/>
+      <short value="Part of referenced Procedure"/>
+      <definition value="A larger Procedure of which this particular ImagingStudy is a component or step."/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Procedure"/>
+      </type>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="workflow"/>
+        <map value="Event.partOf"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="Varies by domain"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".outboundRelationship[typeCode=FLFS].target"/>
+      </mapping>
+    </element>
     <element id="ImagingStudy.status">
       <path value="ImagingStudy.status"/>
       <short value="registered | available | cancelled | entered-in-error | unknown"/>
@@ -460,9 +484,11 @@
       <max value="*"/>
       <type>
         <code value="CodeableReference"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ActivityDefinition"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/PlanDefinition"/>
       </type>
       <isSummary value="true"/>
+      <comment value="Note: This field corresponds to the DICOM Procedure Code Sequence (0008,1032). This is different from the FHIR Procedure resource that may include the ImagingStudy."/>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="ImagingProcedureCode"/>
@@ -490,7 +516,7 @@
       </mapping>
       <mapping>
         <identity value="dicom"/>
-        <map value="(0008,1032)"/>
+        <map value="Procedure Code Sequence (0008,1032)"/>
       </mapping>
     </element>
     <element id="ImagingStudy.location">
